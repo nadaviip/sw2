@@ -1,12 +1,19 @@
 Requirements
- 
+
 ●	Student can create account, login, logout 
+
 ●	Student can set up, edit tables
+
 ●	Student can write, edit, delete notes
+
 ●	Student can search on his notes 
+
 ●	student can make, update, delete todo lists
+
 ●	student can set alarm(timer) 
+
 ●	student can edit his profile 
+
 ●	Student can share his achievements with friends 
 
 

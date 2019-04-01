@@ -1,0 +1,51 @@
+﻿body
+{
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:auto;
+}
+.bar{
+	background-color: #441253;
+    height: 70px;
+	font-size:50px;
+	text-align: center;
+}
+.bar img{
+  margin: 15px;
+  position: absolute;
+  right: 0px;
+}
+  input,select{
+  border-radius: 30px;
+  border-color: #441253;
+  width:300px;
+  border: 2px solid black;
+  height:30px;
+  padding-left:10px;
+  margin:20px;
+  }
+    .content{
+	margin:20px;
+  float:left; 
+  padding-right: 220px;
+	margin-left:200px;
+  }
+      .content2{
+  margin:20px;
+	margin-right:200px;
+  }
+  button{
+  width:120px;
+  height:40px;
+  border-radius: 30px;
+  color: white;
+  font-size:20px;
+  margin:auto;
+  position: relative;
+ bottom: 20px;
+  }
+
+  .btndiv{
+    text-align: center;
+  }

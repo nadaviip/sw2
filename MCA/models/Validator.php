@@ -173,7 +173,7 @@ class Validator {
             $result[$key]="";
             foreach($functions as $functionToCall)
             {
-                if(!$this->$functionToCall($data[$key]))
+                if(!Validator::$functionToCall($data[$key]))
                 $result[$key].=$functionToCall[strlen($functionToCall)-1];    
             }
         }

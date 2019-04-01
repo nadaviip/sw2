@@ -1,7 +1,7 @@
 create database MCA
 use MCA
 create table student(
-st_id int not null auto_increment,
+st_id int not null auto_increment unique,
 st_Name varchar(100) not null,
 password varchar(100) not null,
 email varchar(100) not null ,
@@ -10,10 +10,12 @@ picture varchar(100),
 departement varchar(100),
 level int,
 faculty varchar(100),
-primary key(st_id)
+primary key(email)
 
 
 )
+
+
 
 
 create table note(

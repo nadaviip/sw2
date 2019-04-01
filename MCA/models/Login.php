@@ -12,7 +12,7 @@
  * @author mohamed mokhtar
  */
 
-class Login extends DataBase {
+class Login{
     private $email;
     private $password;          
     private $connection;
@@ -50,7 +50,6 @@ class Login extends DataBase {
         
         $query="select * from student where email='$this->email' and password='$this->password'";
         $result= $this->dataBase->getConeection()->query($query);
-        print_r($result);
         if($result==false)
         {
             $this->close();

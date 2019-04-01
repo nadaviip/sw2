@@ -1,3 +1,48 @@
+.bar{
+	background-color: #441253;
+    height: 70px;
+	font-size:50px;
+	text-align: center;
+	margin-top:50px;
+}
+.button-A
+{
+    font-size: 20px!important;
+    color: white;
+    background-color:#441253;
+}
+.button-B
+{
+    font-size: 20px!important;
+    color: #441253;
+    background-color:white;
+    border: 1px solid #441253!important;
+}
+#register-link
+{
+    font-size: 20px!important;
+    color: #441253!important;
+
+}
+.custom-file-upload {
+
+    text-align: center;
+    display: block;
+    color: #441253;
+    width: 100%;
+    height:75px;
+    margin:10px 0;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    font-family: cursive;
+    font-size: 15px;
+    text-align: center;
+    white-space: normal;
+    cursor: pointer;
+}
+
+
+
 #navMenu 
 {
     display:inline;
@@ -220,14 +265,16 @@ a.logoborder:focus
     
 }
 .error{
-    color:red;
+    color:#DC143C;
     display: block;
     font-family:verdana;
     text-align: center;
 }
 .errorSpans
 {
-     color:red;
+    display:block;
+     text-align: center;
+     color:#DC143C;
      font-family: cursive;
      font-size: 14px;
 }

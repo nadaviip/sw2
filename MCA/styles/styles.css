@@ -6,6 +6,9 @@ body#index{
     background-color:#441253;
  
 }
+#loginBody {
+    background-color: #441253!important;
+}
 
 body#home{
     background-color:#441253;

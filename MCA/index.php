@@ -21,8 +21,7 @@ include'includes/autoLoader.php';
         <link href="styles/reset-min.css" rel="stylesheet" type="text/css"/>
         <link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen"/>
         <link href="styles/styles.css" rel="stylesheet" type="text/css"/>
-        <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <link href="styles/alarm.css" rel="stylesheet" type="text/css"/>
         <link href="icon.png" rel="icon"> 
     </head>
     <body id="index">
@@ -51,7 +50,7 @@ include'includes/autoLoader.php';
                             <li><a href="#">Add New Time table</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Timer</a></li>
+                    <li><a href="?page=views/alarmView">Timer</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo explode(" ", $_SESSION["name"])[0];;?> </a></li>
@@ -59,16 +58,16 @@ include'includes/autoLoader.php';
                 </ul>
             </div>
         </nav>
-       
+            
         <header id="mainHeader">
             
         </header>
         <div class="clearfix"></div>
-       
+            
             <?php
                 
             ?>
-            
+                
                 
                 <?php
                 try {
@@ -88,8 +87,8 @@ include'includes/autoLoader.php';
                 }
                 ?>
                     
-       
-     
+                    
+                    
         <footer id="footer">
             <address>
                 All rights reserved - copyright Legendary Grand Master Team.
@@ -97,6 +96,9 @@ include'includes/autoLoader.php';
             </address>
         </footer> 
             
-            
+        <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/moment.min.js" type="text/javascript"></script>
+        <script src="js/alarm.js" type="text/javascript"></script>
     </body>
 </html>

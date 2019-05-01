@@ -50,8 +50,7 @@ class DataBase {
     }
      
     public function connect()
-    {
-
+    {   
         $this->connection=new mysqli($this->host,  $this->userName,  $this->password,  $this->dataBase,  $this->port);
         if($this->connection->connect_error)
             throw new Exception ("the connection can't be established");

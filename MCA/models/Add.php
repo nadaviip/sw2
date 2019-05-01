@@ -12,13 +12,13 @@
  * @author mohamed mokhtar
  */
 
-class Add extends DataBase {
+class Add {
     private $table;
     private $connection;
     private $dataBase;
-    public function Add($table,$dataBase1Vars)
+    public function Add($table,$dataBaseVars)
     {
-        $this->dataBase = DataBase::createConccection($dataBase1Vars);
+        $this->dataBase = DataBase::createConccection($dataBaseVars);
          $this->dataBase->connect();
         $this->table=$table;
         $this->connection= $this->dataBase->getConeection();
@@ -92,6 +92,10 @@ class Add extends DataBase {
            }
         
         
+    }
+    public function closeDataBase()
+    {
+        $this->dataBase->close();
     }
 
 }

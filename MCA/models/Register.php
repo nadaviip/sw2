@@ -42,6 +42,9 @@ class Register{
        else
            return false;
     }
-  
+    public function closeDataBase()
+    {
+        $this->$add->closeDataBase();
+    }
 
 }

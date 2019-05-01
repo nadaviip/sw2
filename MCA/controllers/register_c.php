@@ -4,10 +4,11 @@ include "../models/functions.php";
 if($_POST)
 {
         $_POST = Validator::santasizeArray($_POST);
-         
         try {
             $keys = " `st_Name`, `email`, `phone`, `faculty`, `departement`, `level`, `password`, `picture`";
             $str = "Register";
+            
+            $_POST['picture'] = $_FILES['picture']['name'];
             $informationToAdd = assignArrWKeys(array_diff($_POST, array("submit" => $str)), $keys);
             if ($informationToAdd == false)
                 throw new Exception("<h2 class='sectionTitle error'>stop trying to hack this solid structure</h2>");
@@ -21,7 +22,6 @@ if($_POST)
                 "password" => "santasizeString",
                 "picture" => "santasizeString",
             );
-           
             $informationToAdd = Validator::santasizeArray($informationToAdd, $rules);
             $rules = array(
                 "st_Name" => "isValidRequired&isValidString&isNan",
@@ -31,6 +31,7 @@ if($_POST)
                 "departement" => "isValidRequired&isValidString&isNan",
                 "level" => "isValidRequired&isValidInteger&isPlus",
                 "password" => "isValidRequired&isValidString",
+                "picture" => "isValidRequired"
             );
 
             $errors = Validator::validateArray($informationToAdd, $rules);
@@ -48,13 +49,14 @@ if($_POST)
             if (!empty($itemsToAdd['level']) && !$validator::isInRange(1, 7, $informationToAdd['level'])) {
                 $errorsMessages['level'] = "the field is not valid";
             }
-            
-            $image = $_FILES['image'];
+            $image = $_FILES['picture'];
             $imageName = $informationToAdd['email'] . "." . pathinfo($image['name'])["extension"];
+            print($image['name']);
+
             if (!empty($image['name']))
                 if (!doesAccept($imageName, array('jpg', 'png', 'bmp'))) {
                     $isThereError = true;
-                    $errorsMessages['image'] = "the file must be an image";
+                    $errorsMessages['picture'] = "the file must be an image";
                 }
             $registerObject = Register::createRegister($informationToAdd);
             if($registerObject->isRegistered())

@@ -1,6 +1,7 @@
 <?php
-
-function autoLoader($classname)
+if (!function_exists(autoLoader))
+{
+    function autoLoader($classname)
 {
     $dirs=array('/models/','models/','../models/','http://localhost/supermarket/models/','/includes/','includes/','../includes/','http://localhost/supermarket//includes/',"/controllers/","controllers/","../controllers/","http://localhost/supermarket/controllers/");
     $formats=array('%s.php','%s.php.inc','%s.class.php','class.%s.php');
@@ -24,3 +25,4 @@ function autoLoader($classname)
     
 }
 spl_autoload_register('autoLoader');
+}

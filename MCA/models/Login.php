@@ -65,4 +65,8 @@ class Login{
            }
       }
     }
+    public function closeDataBase()
+    {
+        $this->dataBase->close();
+    }
 }

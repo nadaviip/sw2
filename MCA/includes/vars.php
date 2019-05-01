@@ -1,6 +1,6 @@
 <?php
 
-define("SITE","http://localhost/supermarket/");
+define("SITE","http://localhost/mca/");
 
 
 

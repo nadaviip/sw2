@@ -1,0 +1,108 @@
+@import 'compass'
+*,
+*:before,
+*:after
+  +box-sizing(border-box)
+  
+html 
+  min-height: 100%
+
+body
+  font: 16px/1.8 sans-serif
+  +background-image(linear-gradient(-30deg, #E6F0FC, #BDE5D1))
+    
+.todoList
+  +box-shadow(0 4px 16px #aaa)
+  width: 500px
+  margin: 30px auto
+  border-top: solid 8px teal
+  > *
+    padding: 10px 20px
+  h1
+    margin: 0
+    background: #fff
+    line-height: 1
+  .items
+    +display-flex
+    +flex-direction(column)
+    padding: 20px
+    counter-reset: done-items pending-items
+  h2
+    margin: 0
+    padding: 10px 0
+    font-size: 16px
+    line-height: 1
+    position: relative    
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      left: -20px
+      top: 15%
+      width: 1px
+      height: 70%
+      border-left: solid 4px teal
+    &::after
+      +border-radius(6px)
+      display: block
+      float: right
+      background: teal
+      color: #fff
+      padding: 4px
+      min-width: 1.5em
+      text-align: center
+  .done
+    +order(1)
+    &::after
+      content: counter(done-items)
+  .pending
+    +order(3)
+    &::after
+      content: counter(pending-items)
+  input
+    position: absolute
+    left: -999px
+    &:focus + label
+      background: rgba(#fff, .4)
+    &:checked + label
+      +order(2)
+      +animation(done .6s)
+      counter-increment: done-items
+      &::before
+        content: '\f058'
+  label
+    +order(4)  
+    +animation(pending .6s)
+    display: block
+    position: relative
+    padding: 10px 0 10px 40px
+    border-top: dashed 1px #fff
+    cursor: pointer
+    counter-increment: pending-items
+    &:hover
+      background: rgba(#fff, .4)
+    &::before
+      content: '\f10c'
+      font: 28px 'FontAwesome'
+      display: block
+      position: absolute
+      left: 10px
+      top: 8px
+    
++keyframes(done)
+  0%
+    +transform(translateY(20px))
+    +opacity(0)
+    background: rgba(#fff,.4)
+  50%
+    +opacity(1)
+    background: rgba(#fff,.4)
+ 
++keyframes(pending)
+  0%
+    +transform(translateY(-20px))
+    +opacity(0)
+    background: rgba(#fff,.4)
+  50%
+    +opacity(1)
+    background: rgba(#fff,.4)

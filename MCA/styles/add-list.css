@@ -1,0 +1,132 @@
+
+
+.add-list-container {
+  display: block;
+  width: 400px;
+  margin: 100px auto 0;
+    color:white;
+}
+#incomplete-tasks, #completed-tasks  {
+  margin: 0;
+  padding: 0;
+  color:white;
+}
+ul#incomplete-tasks li *, ul#completed-tasks li * {
+  float: left;
+}
+ul#incomplete-tasks li,ul#completed-tasks li, #todo-name {
+  clear:both;
+  list-style:none;
+}
+ul#incomplete-tasks input,ul#completed-tasks input,  ul#incomplete-tasks button, ul#completed-tasks button {
+  outline: none;
+}
+#add-taks-btn{
+  background: none;
+  border: 0px;
+  color: #9d9d9d;
+  font-size: 18px;
+  width: 60px;
+  font-family: Lato, sans-serif;
+  cursor: pointer;
+}
+#add-taks-btn:hover {
+  color: white;
+}
+ul#incomplete-tasks button, ul#completed-tasks button {
+  background: none;
+  border: 0px;
+  color: #9d9d9d;
+  font-size: 15px;
+  width: 60px;
+  margin: 10px 0 0;
+  font-family: Lato, sans-serif;
+  cursor: pointer;
+}
+ul#incomplete-tasks button:hover, ul#completed-tasks button:hover {
+  color: white;
+}
+/* Heading */
+#todo-name,
+ul#incomplete-tasks label[for='new-task'], ul#completed-tasks label[for='new-task'] {
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  border-bottom: 2px solid white;
+  padding: 30px 0 10px;
+  margin: 0;
+  text-transform: uppercase;
+}
+#incomplete-tasks input[type="text"], #completed-tasks input[type="text"] {
+  margin: 0;
+  font-size: 18px;
+  line-height: 18px;
+  height: 30px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  font-family: Lato, sans-serif;
+  color: #888;
+}
+ul#incomplete-tasks input[type="text"]:focus , ul#completed-tasks input[type="text"]:focus {
+  color: #333;
+}
+
+/* New Task */
+label[for='new-task'] {
+  display: block;
+  margin: 0 0 20px;
+}
+#new-task {
+  float: left;
+  width: 330px;
+  height: 30px;
+  color:#441253;
+}
+#addnewTask > button:hover {
+  color: white;
+}
+
+/* Task list */
+ul#incomplete-tasks li , ul#completed-tasks li{
+  overflow: hidden;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+ul#incomplete-tasks li > input[type="checkbox"], ul#completed-tasks li > input[type="checkbox"] {
+  margin: 0 10px;
+  position: relative;
+  top: 15px;
+}
+ul#incomplete-tasks li > label, ul#completed-tasks li > label{
+  font-size: 18px;
+  line-height: 40px;
+  width: 237px;
+  padding: 0 0 0 11px;
+}
+ul#incomplete-tasks li >  input[type="text"],ul#completed-tasks li >  input[type="text"] {
+  width: 226px;
+}
+ul#incomplete-tasks li > .delete:hover, ul#completed-tasks li > .delete:hover {
+  color: #CF2323;
+}
+
+/* Completed */
+#completed-tasks label {
+  text-decoration: line-through;
+  color: white;
+}
+
+/* Edit Task */
+ul#incomplete-tasks  li input[type=text], ul#completed-tasks  li input[type=text] {
+  display:none;
+}
+
+ul#incomplete-tasks li.editMode input[type=text],  ul#completed-tasks li.editMode input[type=text] {
+  display:block;
+}
+
+ul#incomplete-tasks  li.editMode label,  ul#completed-tasks  li.editMode label{
+  display:none;
+}

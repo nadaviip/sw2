@@ -12,6 +12,21 @@ class Display {
         $this->table=$table;
         $this->connection= $this->dataBase->getConeection();
     }
+    public function getTheLastId($idKey)
+    {
+        $query = "SELECT MAX($idKey) AS last_id FROM $this->table";
+        $result = $this->connection->query($query);
+         if(!$result)
+            throw new exception("cann't get your data from the database");
+        $num = $result->num_rows;
+        if($num>0)
+        {
+            $data = $result->fetch_assoc();     
+            return $data;
+        }
+       else
+            return FALSE;
+    }
     public function getALLData($orderBy=null)
     {
         if($orderBy!=null)

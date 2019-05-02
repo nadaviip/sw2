@@ -555,7 +555,7 @@ a.logoborder:focus
     
 }
 .formSection{
-    float:left;
+    /*float:left;*/
     margin:50px 25%;   
 }
 
@@ -580,7 +580,7 @@ a.logoborder:focus
     height: 40px;
     padding: 5px;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    /*border: 1px solid #ddd;*/
     margin: 0;
     margin-bottom: 10px;
     font-family: cursive;

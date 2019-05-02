@@ -22,7 +22,9 @@ include'includes/autoLoader.php';
         <link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen"/>
         <link href="styles/styles.css" rel="stylesheet" type="text/css"/>
         <link href="styles/alarm.css" rel="stylesheet" type="text/css"/>
+        <link href="styles/add-list.css" rel="stylesheet" type="text/css"/>
         <link href="icon.png" rel="icon"> 
+
     </head>
     <body id="index">
         <nav class="navbar navbar-inverse navbar_">
@@ -32,16 +34,16 @@ include'includes/autoLoader.php';
                 </div>
                 <ul class="nav navbar-nav">
                     
-                    <li class=" active_ dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Notes<span class="caret"></span></a>
+                    <li class="<?php if ($_GET['page'] == 'controllers/viewNotes_c' || $_GET['page'] == 'controllers/addNote_c' ) echo 'active_'?> dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Notes<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="?page=controllers/viewNotes_c">View Notes</a></li>
                             <li><a href="?page=controllers/addNote_c">Add New Note</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">To-Do<span class="caret"></span></a>
+                    <li class="<?php if ($_GET['page'] == 'controllers/addList_c' || $_GET['page'] == 'controllers/viewLists_c' ) echo 'active_'?> dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">To-Do<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">View To-Dos</a></li>
-                            <li><a href="#">Add New To-Do</a></li>
+                            <li><a href="?page=controllers/addList_c">Add New To-Do</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Schedule<span class="caret"></span></a>
@@ -50,7 +52,7 @@ include'includes/autoLoader.php';
                             <li><a href="#">Add New Time table</a></li>
                         </ul>
                     </li>
-                    <li><a href="?page=views/alarmView">Timer</a></li>
+                    <li class="<?php if ($_GET['page'] == 'views/alarmView' ) echo 'active_'?>"><a href="?page=views/alarmView">Timer</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo explode(" ", $_SESSION["name"])[0];;?> </a></li>
@@ -100,5 +102,7 @@ include'includes/autoLoader.php';
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/moment.min.js" type="text/javascript"></script>
         <script src="js/alarm.js" type="text/javascript"></script>
+        <script src="js/add-list.js" type="text/javascript"></script>
+        <script src="js/global.js" type="text/javascript"></script>
     </body>
 </html>
